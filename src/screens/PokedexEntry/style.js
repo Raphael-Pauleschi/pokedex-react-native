@@ -1,36 +1,36 @@
-import styled from 'styled-components/native'
+import styled from 'styled-components/native';
 
 export const PokemonImage = styled.Image`
-width: 180;
- height: 180;
- alignSelf: center;
+  width: 180px;
+  height: 180px;
+  align-self: center;
 `;
 
 export const PokemonName = styled.Text`
-font-size: 50px
-text-align: center
+  font-size: 50px;
+  text-align: center;
 `;
 
 export const DexEntryWrapper = styled.View`
-
-    paddingVertical: 8;
+  padding-vertical: 8px;
 `;
 
 export const DexEntryGameContainer = styled.View`
-background-color: pink;
-borderWidth: 1px;         
-borderColor: black;
+  background-color: pink;
+  border-width: 1px;
+  border-color: black;
 `;
 
 export const DexEntryGame = styled.Text``;
 
 export const DexEntryTextContainer = styled.View`
-background-color: white;
-borderWidth: 1px;         
-borderColor: black;
+  background-color: white;
+  border-width: 1px;
+  border-color: black;
 `;
 
 export const DexEntryText = styled.Text`
-text-align: justify`;
+  text-align: justify;
+`;
 
 export const Container = styled.View``;
