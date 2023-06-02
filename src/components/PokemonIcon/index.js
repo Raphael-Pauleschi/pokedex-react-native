@@ -1,13 +1,19 @@
 import axios from 'axios';
-import { TouchableOpacity } from 'react-native';
+import { ActivityIndicator, TouchableOpacity } from 'react-native';
 import { useState, useEffect } from 'react';
 import { useNavigation } from '@react-navigation/native';
 import { PokemonImage, PokemonImageContainer } from './style';
 
 function PokemonIcon({ url }) {
+  const [loading, setLoading] = useState(true);
   const [pokemonUrl, setPokemonUrl] = useState('');
   const [pokemonData, setPokemonData] = useState('')
   const navigation = useNavigation();
+
+  const handleImageLoad = () => {
+    setLoading(false);
+  };
+
   useEffect(() => {
     const fetchPokemonData = async () => {
       try {
@@ -27,12 +33,23 @@ const handlePress = () => {
 
     navigation.navigate('PokemonDetail', pokemonData);
   };
-  return (
+
+  if (!pokemonUrl) {
+    return null; // Render nothing if the URI is empty
+  }
+  
+ return (
     <TouchableOpacity onPress={handlePress}>
-    <PokemonImageContainer>
-      <PokemonImage source={{ uri: pokemonUrl }} />
-    </PokemonImageContainer>
+      <PokemonImageContainer>
+        {loading && <ActivityIndicator />}
+        <PokemonImage
+          source={{ uri: pokemonUrl }}
+          onLoad={handleImageLoad}
+          resizeMode="contain"
+        />
+      </PokemonImageContainer>
     </TouchableOpacity>
   );
 }
+
 export default PokemonIcon;
