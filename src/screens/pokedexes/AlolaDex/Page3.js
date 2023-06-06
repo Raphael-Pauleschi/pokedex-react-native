@@ -4,7 +4,7 @@ import PokemonList from '../../../services/PokemonList'
 
 function AlolaDex() {
   const pokemonList = PokemonList(
-        'https://pokeapi.co/api/v2/pokemon?limit=22&offset=765'
+        'https://pokeapi.co/api/v2/pokemon?limit=23&offset=765'
       )
  return (
     <PokemonFlatList pokemonList={pokemonList}/>
