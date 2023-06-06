@@ -1,15 +1,15 @@
 import * as React from 'react';
 import { createNativeStackNavigator } from '@react-navigation/native-stack'
-import Screen1 from '../../../screens/pokedexes/AlolaDex/Page1'
-import Screen2 from '../../../screens/pokedexes/AlolaDex/Page2'
-import Screen3 from '../../../screens/pokedexes/AlolaDex/Page3'
-import Screen4 from '../../../screens/pokedexes/AlolaDex/Page4'
+import Screen1 from '../../../screens/pokedexes/SinnohDex/Page1'
+import Screen2 from '../../../screens/pokedexes/SinnohDex/Page2'
+import Screen3 from '../../../screens/pokedexes/SinnohDex/Page3'
+import Screen4 from '../../../screens/pokedexes/SinnohDex/Page4'
 import PokedexEntry from '../../../screens/PokedexEntry'
 import StepStack from '../StepStack'
 
 const Stack = createNativeStackNavigator();
 
-function NavigationAlola() {
+function NavigationSinnoh() {
     return (
         <Stack.Navigator initialScreen="Page1" screenOptions={{headerShown: false}}>
             <Stack.Screen name="Page1">
@@ -38,4 +38,4 @@ function NavigationAlola() {
 
 }
 
-export default NavigationAlola;
+export default NavigationSinnoh;

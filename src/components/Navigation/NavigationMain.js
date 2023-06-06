@@ -3,7 +3,7 @@ import { createDrawerNavigator } from '@react-navigation/drawer';
 import KantoDex from '../../screens/pokedexes/KantoDex';
 import JohtoDex from '../../screens/pokedexes/JohtoDex';
 import HoeenDex from '../../screens/pokedexes/HoeenDex';
-import SinnohDex from '../../screens/pokedexes/SinnohDex';
+import SinnohDex from './NavigationRegion/NavigationSinnoh';
 import UnovaDex from './NavigationRegion/NavigationUnova';
 import PaldeaDex from '../../screens/pokedexes/PaldeaDex';
 import AlolaDex from './NavigationRegion/NavigationAlola';
@@ -25,8 +25,6 @@ function Navigation() {
       <Drawer.Screen name="Alola" component={AlolaDex} />
       <Drawer.Screen name="Galar" component={GalarDex} />
       <Drawer.Screen name="Paldea" component={PaldeaDex} />
-       <Drawer.Screen name="PokemonDetail" component={PokedexEntry} options={{ 
-         drawerLabel: () => null }} />
     </Drawer.Navigator>
   );
 }

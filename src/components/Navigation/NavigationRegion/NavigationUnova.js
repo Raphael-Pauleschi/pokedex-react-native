@@ -6,6 +6,7 @@ import Screen3 from '../../../screens/pokedexes/UnovaDex/Page3'
 import Screen4 from '../../../screens/pokedexes/UnovaDex/Page4'
 import Screen5 from '../../../screens/pokedexes/UnovaDex/Page5'
 import Screen6 from '../../../screens/pokedexes/UnovaDex/Page6'
+import PokedexEntry from '../../../screens/PokedexEntry'
 import StepStack from '../StepStack'
 
 const Stack = createNativeStackNavigator();
@@ -43,6 +44,7 @@ function NavigationUnova() {
                     <Screen6 />
                 </StepStack>)}
             </Stack.Screen>
+            <Stack.Screen name="PokemonDetail" component={PokedexEntry}/>
         </Stack.Navigator>
     )
 
