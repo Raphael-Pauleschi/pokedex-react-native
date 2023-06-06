@@ -1,15 +1,15 @@
 import * as React from 'react';
 import { createDrawerNavigator } from '@react-navigation/drawer';
-import KantoDex from '../screens/pokedexes/KantoDex';
-import JohtoDex from '../screens/pokedexes/JohtoDex';
-import HoeenDex from '../screens/pokedexes/HoeenDex';
-import SinnohDex from '../screens/pokedexes/SinnohDex';
-import UnovaDex from '../screens/pokedexes/UnovaDex';
-import PaldeaDex from '../screens/pokedexes/PaldeaDex';
-import AlolaDex from '../screens/pokedexes/AlolaDex';
-import KalosDex from '../screens/pokedexes/KalosDex';
-import GalarDex from '../screens/pokedexes/GalarDex';
-import PokedexEntry from '../screens/PokedexEntry'
+import KantoDex from './NavigationRegion/NavigationKanto';
+import JohtoDex from './NavigationRegion/NavigationJohto';
+import HoeenDex from './NavigationRegion/NavigationHoeen';
+import SinnohDex from './NavigationRegion/NavigationSinnoh';
+import UnovaDex from './NavigationRegion/NavigationUnova';
+import PaldeaDex from './NavigationRegion/NavigationPaldea';
+import AlolaDex from './NavigationRegion/NavigationAlola';
+import KalosDex from './NavigationRegion/NavigationKalos';
+import GalarDex from './NavigationRegion/NavigationGalar';
+
 
 const Drawer = createDrawerNavigator();
 
@@ -25,8 +25,6 @@ function Navigation() {
       <Drawer.Screen name="Alola" component={AlolaDex} />
       <Drawer.Screen name="Galar" component={GalarDex} />
       <Drawer.Screen name="Paldea" component={PaldeaDex} />
-       <Drawer.Screen name="PokemonDetail" component={PokedexEntry} options={{ 
-         drawerLabel: () => null }} />
     </Drawer.Navigator>
   );
 }

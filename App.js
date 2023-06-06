@@ -1,6 +1,6 @@
-import { SafeAreaView, ScrollView } from 'react-native';
+import { SafeAreaView } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
-import Navigation from './src/components/Navigation';
+import Navigation from './src/components/Navigation/NavigationMain';
 
 export default function App() {
   return (
