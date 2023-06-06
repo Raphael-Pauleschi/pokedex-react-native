@@ -1,23 +1,49 @@
 import * as React from 'react';
 import { createNativeStackNavigator } from '@react-navigation/native-stack'
-import Tela1 from '../../screens/pokedexes/UnovaDex/Page1'
-import Tela2 from '../../screens/pokedexes/UnovaDex/Page2'
-import Tela3 from '../../screens/pokedexes/UnovaDex/Page3'
-import Tela4 from '../../screens/pokedexes/UnovaDex/Page4'
-import Tela5 from '../../screens/pokedexes/UnovaDex/Page5'
-import Tela6 from '../../screens/pokedexes/UnovaDex/Page6'
+import Screen1 from '../../screens/pokedexes/UnovaDex/Page1'
+import Screen2 from '../../screens/pokedexes/UnovaDex/Page2'
+import Screen3 from '../../screens/pokedexes/UnovaDex/Page3'
+import Screen4 from '../../screens/pokedexes/UnovaDex/Page4'
+import Screen5 from '../../screens/pokedexes/UnovaDex/Page5'
+import Screen6 from '../../screens/pokedexes/UnovaDex/Page6'
+import StepStack from '../StepStack'
+
 const Stack = createNativeStackNavigator();
 
 function NavigationUnova() {
-    return(
-    <Stack.Navigator initialScreen="Page1" screenOption={{headerShown: false}}>
-        <Stack.Screen name="Page1" component={Tela1}/>
-        <Stack.Screen name="Page2" component={Tela2}/>
-        <Stack.Screen name="Page3" component={Tela3}/>
-        <Stack.Screen name="Page4" component={Tela4}/>
-        <Stack.Screen name="Page5" component={Tela5}/>
-        <Stack.Screen name="Page6" component={Tela6}/>
-    </Stack.Navigator>
+    return (
+        <Stack.Navigator initialScreen="Page1" screenOption={{ headerShown: false }}>
+            <Stack.Screen name="Page1">
+                {comp => (<StepStack {...comp} next="Page2">
+                    <Screen1 />
+                </StepStack>)}
+            </Stack.Screen>
+            <Stack.Screen name="Page2">
+                {comp => (<StepStack {...comp} next="Page3" back>
+                    <Screen2 />
+                </StepStack>)}
+            </Stack.Screen>
+            <Stack.Screen name="Page3">
+                {comp => (<StepStack {...comp} next="Page4" back>
+                    <Screen3 />
+                </StepStack>)}
+            </Stack.Screen>
+            <Stack.Screen name="Page4" >
+                {comp => (<StepStack {...comp} next="Page5" back>
+                    <Screen4 />
+                </StepStack>)}
+            </Stack.Screen>
+            <Stack.Screen name="Page5">
+                {comp => (<StepStack {...comp} next="Page6" back>
+                    <Screen5 />
+                </StepStack>)}
+            </Stack.Screen>
+            <Stack.Screen name="Page6">
+                {comp => (<StepStack {...comp} back>
+                    <Screen6 />
+                </StepStack>)}
+            </Stack.Screen>
+        </Stack.Navigator>
     )
 
 }

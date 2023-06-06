@@ -1,18 +1,18 @@
 import * as React from 'react'
-import { Container, HeaderWrapper, PageButton, ContentWrapper } from 'react-native'
+import { Container, HeaderWrapper, PageButton, ContentWrapper } from './style'
 
-(comp) => (
+StepStack = (comp) => (
     <Container>
         <HeaderWrapper>
-            {comp.back &
+            {comp.back ?
                 <PageButton title="Back"
                     onPress={() => { comp.navigation.navigate(comp.back) }}
-                />
+                />: false
             }
-            {comp.next &
+            {comp.next ?
                 <PageButton title="Next"
                     onPress={() => { comp.navigation.navigate(comp.next) }}
-                />
+                />: false
             }
         </HeaderWrapper>
         <ContentWrapper>
@@ -20,3 +20,5 @@ import { Container, HeaderWrapper, PageButton, ContentWrapper } from 'react-nati
         </ContentWrapper>
     </Container>
 )
+
+export default StepStack;

@@ -11,6 +11,6 @@ export const HeaderWrapper = styled.View`
 
 export const PageButton = styled.Button``;
 
-export const ContentWrapper = styled.ScrollView`
+export const ContentWrapper = styled.View`
 flex: 1;`;
 
