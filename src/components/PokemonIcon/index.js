@@ -2,7 +2,13 @@ import axios from 'axios';
 import { ActivityIndicator, TouchableOpacity } from 'react-native';
 import { useState, useEffect } from 'react';
 import { useNavigation } from '@react-navigation/native';
-import { PokemonImage, PokemonImageContainer } from './style';
+import {
+  PokeballContainer,
+  PokeballUp,
+  PokeballDown,
+  PokeballStrip,
+  PokeballImage,
+} from './style';
 
 function PokemonIcon({ url }) {
   const [loading, setLoading] = useState(true);
@@ -28,8 +34,8 @@ function PokemonIcon({ url }) {
 
     fetchPokemonData();
   }, [url]);
-const handlePress = () => {
-  
+  const handlePress = () => {
+
 
     navigation.navigate('PokemonDetail', pokemonData);
   };
@@ -37,17 +43,18 @@ const handlePress = () => {
   if (!pokemonUrl) {
     return null; // Render nothing if the URI is empty
   }
-  
- return (
+
+  return (
     <TouchableOpacity onPress={handlePress}>
-      <PokemonImageContainer>
-        {loading && <ActivityIndicator />}
-        <PokemonImage
-          source={{ uri: pokemonUrl }}
+      {loading && <ActivityIndicator />}
+      <PokeballContainer>
+        <PokeballUp />
+        <PokeballStrip />
+        <PokeballDown />
+        <PokeballImage source={{ uri: pokemonUrl }}
           onLoad={handleImageLoad}
-          resizeMode="contain"
-        />
-      </PokemonImageContainer>
+          resizeMode="contain" />
+      </PokeballContainer>
     </TouchableOpacity>
   );
 }

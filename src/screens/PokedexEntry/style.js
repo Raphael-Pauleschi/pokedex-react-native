@@ -33,4 +33,4 @@ export const DexEntryText = styled.Text`
   text-align: justify;
 `;
 
-export const Container = styled.View``;
+export const Container = styled.ScrollView``;

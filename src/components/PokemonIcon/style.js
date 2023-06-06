@@ -1,17 +1,44 @@
 import styled from 'styled-components/native';
 
-export const PokemonImageContainer = styled.View`
-  padding: 0px 4px;
-  background-color: white;
-  border-width: 1px;         
-  border-color: black;
-  border-radius: 55px;
-  width: 100px;
-  height: 100px;
+
+export const PokeballContainer = styled.View`
+  justify-content: center;
+  align-items: center;
 `;
 
-export const PokemonImage = styled.Image`
+export const PokeballUp = styled.View`
+  background-color: red;
+  padding: 20px;
+  width: 100px;
+  height: 50px;
+  border-top-left-radius: 50px;
+  border-top-right-radius: 50px;
+  justify-content: center;
+  align-items: center;
+`;
+
+export const PokeballDown = styled.View`
+  background-color: #d9dbda;
+  padding: 20px;
+  width: 100px;
+  height: 50px;
+  border-bottom-left-radius: 50px;
+  border-bottom-right-radius: 50px;
+  justify-content: center;
+  align-items: center;
+`;
+
+export const PokeballStrip = styled.View`
+  background-color: black;
+  height: 5px;
   width: 90px;
-  height: 90px;
+  justify-content: center;
+  align-items: center;
+`;
+
+export const PokeballImage = styled.Image`
+  width: 100px;
+  height: 100px;
+  position: absolute;
 `;
 
