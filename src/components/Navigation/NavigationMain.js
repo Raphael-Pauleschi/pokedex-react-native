@@ -6,7 +6,7 @@ import HoeenDex from '../../screens/pokedexes/HoeenDex';
 import SinnohDex from '../../screens/pokedexes/SinnohDex';
 import UnovaDex from './NavigationRegion/NavigationUnova';
 import PaldeaDex from '../../screens/pokedexes/PaldeaDex';
-import AlolaDex from '../../screens/pokedexes/AlolaDex';
+import AlolaDex from './NavigationRegion/NavigationAlola';
 import KalosDex from '../../screens/pokedexes/KalosDex';
 import GalarDex from '../../screens/pokedexes/GalarDex';
 import PokedexEntry from '../../screens/PokedexEntry'
