@@ -1,6 +1,6 @@
 import React from 'react';
-import PokemonFlatList from '../../components/PokemonFlatList'
-import PokemonList from '../../services/PokemonList'
+import PokemonFlatList from '../../../components/PokemonFlatList'
+import PokemonList from '../../../services/PokemonList'
 
 function JohtoDex() {
    const pokemonList = PokemonList(

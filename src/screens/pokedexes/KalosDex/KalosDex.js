@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import PokemonFlatList from '../../components/PokemonFlatList'
-import PokemonList from '../../services/PokemonList'
+import PokemonFlatList from '../../../components/PokemonFlatList'
+import PokemonList from '../../../services/PokemonList'
 
 function KalosDex() {
   const pokemonList = PokemonList(
