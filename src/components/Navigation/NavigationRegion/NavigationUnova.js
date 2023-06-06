@@ -1,11 +1,11 @@
 import * as React from 'react';
 import { createNativeStackNavigator } from '@react-navigation/native-stack'
-import Screen1 from '../../screens/pokedexes/UnovaDex/Page1'
-import Screen2 from '../../screens/pokedexes/UnovaDex/Page2'
-import Screen3 from '../../screens/pokedexes/UnovaDex/Page3'
-import Screen4 from '../../screens/pokedexes/UnovaDex/Page4'
-import Screen5 from '../../screens/pokedexes/UnovaDex/Page5'
-import Screen6 from '../../screens/pokedexes/UnovaDex/Page6'
+import Screen1 from '../../../screens/pokedexes/UnovaDex/Page1'
+import Screen2 from '../../../screens/pokedexes/UnovaDex/Page2'
+import Screen3 from '../../../screens/pokedexes/UnovaDex/Page3'
+import Screen4 from '../../../screens/pokedexes/UnovaDex/Page4'
+import Screen5 from '../../../screens/pokedexes/UnovaDex/Page5'
+import Screen6 from '../../../screens/pokedexes/UnovaDex/Page6'
 import StepStack from '../StepStack'
 
 const Stack = createNativeStackNavigator();

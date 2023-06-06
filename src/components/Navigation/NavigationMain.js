@@ -1,15 +1,15 @@
 import * as React from 'react';
 import { createDrawerNavigator } from '@react-navigation/drawer';
-import KantoDex from '../screens/pokedexes/KantoDex';
-import JohtoDex from '../screens/pokedexes/JohtoDex';
-import HoeenDex from '../screens/pokedexes/HoeenDex';
-import SinnohDex from '../screens/pokedexes/SinnohDex';
+import KantoDex from '../../screens/pokedexes/KantoDex';
+import JohtoDex from '../../screens/pokedexes/JohtoDex';
+import HoeenDex from '../../screens/pokedexes/HoeenDex';
+import SinnohDex from '../../screens/pokedexes/SinnohDex';
 import UnovaDex from './NavigationRegion/NavigationUnova';
-import PaldeaDex from '../screens/pokedexes/PaldeaDex';
-import AlolaDex from '../screens/pokedexes/AlolaDex';
-import KalosDex from '../screens/pokedexes/KalosDex';
-import GalarDex from '../screens/pokedexes/GalarDex';
-import PokedexEntry from '../screens/PokedexEntry'
+import PaldeaDex from '../../screens/pokedexes/PaldeaDex';
+import AlolaDex from '../../screens/pokedexes/AlolaDex';
+import KalosDex from '../../screens/pokedexes/KalosDex';
+import GalarDex from '../../screens/pokedexes/GalarDex';
+import PokedexEntry from '../../screens/PokedexEntry'
 
 const Drawer = createDrawerNavigator();
 
