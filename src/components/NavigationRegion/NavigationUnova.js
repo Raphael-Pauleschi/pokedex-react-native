@@ -10,7 +10,7 @@ const Stack = createNativeStackNavigator();
 
 function NavigationUnova() {
     return(
-    <Stack.Navigator initialScreen="Page1" screenOption={{headerShown: true}}>
+    <Stack.Navigator initialScreen="Page1" screenOption={{headerShown: false}}>
         <Stack.Screen name="Page1" component={Tela1}/>
         <Stack.Screen name="Page2" component={Tela2}/>
         <Stack.Screen name="Page3" component={Tela3}/>
