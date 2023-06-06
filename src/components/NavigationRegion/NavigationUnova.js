@@ -12,34 +12,34 @@ const Stack = createNativeStackNavigator();
 
 function NavigationUnova() {
     return (
-        <Stack.Navigator initialScreen="Page1" screenOption={{ headerShown: false }}>
+        <Stack.Navigator initialScreen="Page1" screenOptions={{headerShown: false}}>
             <Stack.Screen name="Page1">
                 {comp => (<StepStack {...comp} next="Page2">
                     <Screen1 />
                 </StepStack>)}
             </Stack.Screen>
             <Stack.Screen name="Page2">
-                {comp => (<StepStack {...comp} next="Page3" back>
+                {comp => (<StepStack {...comp} next="Page3" back="Page1">
                     <Screen2 />
                 </StepStack>)}
             </Stack.Screen>
             <Stack.Screen name="Page3">
-                {comp => (<StepStack {...comp} next="Page4" back>
+                {comp => (<StepStack {...comp} next="Page4" back="Page2">
                     <Screen3 />
                 </StepStack>)}
             </Stack.Screen>
             <Stack.Screen name="Page4" >
-                {comp => (<StepStack {...comp} next="Page5" back>
+                {comp => (<StepStack {...comp} next="Page5" back="Page3">
                     <Screen4 />
                 </StepStack>)}
             </Stack.Screen>
             <Stack.Screen name="Page5">
-                {comp => (<StepStack {...comp} next="Page6" back>
+                {comp => (<StepStack {...comp} next="Page6" back="Page4">
                     <Screen5 />
                 </StepStack>)}
             </Stack.Screen>
             <Stack.Screen name="Page6">
-                {comp => (<StepStack {...comp} back>
+                {comp => (<StepStack {...comp} back="Page5">
                     <Screen6 />
                 </StepStack>)}
             </Stack.Screen>
