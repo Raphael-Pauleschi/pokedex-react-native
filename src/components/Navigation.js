@@ -4,7 +4,7 @@ import KantoDex from '../screens/pokedexes/KantoDex';
 import JohtoDex from '../screens/pokedexes/JohtoDex';
 import HoeenDex from '../screens/pokedexes/HoeenDex';
 import SinnohDex from '../screens/pokedexes/SinnohDex';
-import UnovaDex from '../screens/pokedexes/UnovaDex';
+import UnovaDex from './NavigationRegion/NavigationUnova';
 import PaldeaDex from '../screens/pokedexes/PaldeaDex';
 import AlolaDex from '../screens/pokedexes/AlolaDex';
 import KalosDex from '../screens/pokedexes/KalosDex';
