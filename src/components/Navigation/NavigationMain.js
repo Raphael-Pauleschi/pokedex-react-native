@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { createDrawerNavigator } from '@react-navigation/drawer';
-import KantoDex from '../../screens/pokedexes/KantoDex';
+import KantoDex from './NavigationRegion/NavigationKanto';
 import JohtoDex from '../../screens/pokedexes/JohtoDex';
 import HoeenDex from './NavigationRegion/NavigationHoeen';
 import SinnohDex from './NavigationRegion/NavigationSinnoh';
