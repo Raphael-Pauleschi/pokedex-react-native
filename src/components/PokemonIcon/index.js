@@ -46,8 +46,9 @@ function PokemonIcon({ url }) {
 
   return (
     <TouchableOpacity onPress={handlePress}>
-      {loading && <ActivityIndicator />}
+
       <PokeballContainer>
+        {loading && <ActivityIndicator />}
         <PokeballUp />
         <PokeballStrip />
         <PokeballDown />

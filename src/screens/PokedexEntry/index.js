@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import {View,Text} from 'react-native';
+import StatsDisplay from '../../components/StatsDisplay';
 import {
   PokemonImage,
   PokemonName,
@@ -46,6 +48,11 @@ function PokemonDetail({ route }) {
     <Container>
       <PokemonImage source={{ uri: pokemonData.sprites.front_default }} />
       <PokemonName>{formatName(pokemonData.species.name)}</PokemonName>
+      {pokemonData.stats.map((pokemonStats,index) =>(
+         <StatsDisplay key={index} label={formatName(pokemonStats.stat.name)} value={pokemonStats.base_stat}/>
+      ))
+
+      }
       {pokemonEntries.length == 0 && (
         <>
           <DexEntryWrapper>

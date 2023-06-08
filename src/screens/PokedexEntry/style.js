@@ -9,6 +9,7 @@ export const PokemonImage = styled.Image`
 export const PokemonName = styled.Text`
   font-size: 50px;
   text-align: center;
+  background-color: pink;
 `;
 
 export const DexEntryWrapper = styled.View`
