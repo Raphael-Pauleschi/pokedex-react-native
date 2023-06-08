@@ -1,6 +1,5 @@
 import React from 'react';
-import { View, Text, StyleSheet } from 'react-native';
-import {Container, Label} from './style' 
+import {Container, Label, Bar} from './style' 
 const StatsDisplay = ({ label, value }) => {
 function specialStatsChange(text){
     if(text == "Special Attack")
@@ -14,7 +13,7 @@ function specialStatsChange(text){
         <Container>
             <Label>{specialStatsChange(label)}</Label>
             <Label>{value}</Label>
-            <View style={[styles.bar, { backgroundColor: getBarColor(value), width: `${value/3}%` }]} />
+            <Bar color={getBarColor(value)} width={`${value/3}%`} />
         </Container>
     );
 };
@@ -33,11 +32,6 @@ const getBarColor = (value) => {
     }
 };
 
-const styles = StyleSheet.create({
-    bar: {
-        height: 10,
-        borderRadius: 4,
-    },
-});
+
 
 export default StatsDisplay;

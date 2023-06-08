@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import {View,Text} from 'react-native';
+import formatName from '../../services/FormatName';
 import StatsDisplay from '../../components/StatsDisplay';
 import {
   PokemonImage,
@@ -12,19 +12,11 @@ import {
   DexEntryGameContainer,
   DexEntryTextContainer,
 } from './style';
+import TypeIcon from '../../components/TypeIcon';
 
 function PokemonDetail({ route }) {
   const pokemonData = route.params;
   const [pokemonEntries, setPokemonEntries] = useState([]);
-
-  const formatName = (name) => {
-  const words = name.split('-');
-  const formattedWords = words.map((word) => {
-    return word.charAt(0).toUpperCase() + word.slice(1);
-  });
-  return formattedWords.join(' ');
-};
-
 
   useEffect(() => {
     const fetchPokemonEntries = async () => {
@@ -48,11 +40,11 @@ function PokemonDetail({ route }) {
     <Container>
       <PokemonImage source={{ uri: pokemonData.sprites.front_default }} />
       <PokemonName>{formatName(pokemonData.species.name)}</PokemonName>
-      {pokemonData.stats.map((pokemonStats,index) =>(
-         <StatsDisplay key={index} label={formatName(pokemonStats.stat.name)} value={pokemonStats.base_stat}/>
-      ))
-
-      }
+      <TypeIcon types={pokemonData.types} />
+      {pokemonData.stats.map((pokemonStats, index) => (
+        <StatsDisplay key={index} label={formatName(pokemonStats.stat.name)} value={pokemonStats.base_stat} />
+      ))}
+  
       {pokemonEntries.length == 0 && (
         <>
           <DexEntryWrapper>
