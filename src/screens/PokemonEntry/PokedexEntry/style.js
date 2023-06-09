@@ -1,19 +1,9 @@
 import styled from 'styled-components/native';
 
-export const PokemonImage = styled.Image`
-  width: 180px;
-  height: 180px;
-  align-self: center;
-`;
-
-export const PokemonName = styled.Text`
-  font-size: 50px;
-  text-align: center;
-  background-color: pink;
-`;
 
 export const DexEntryWrapper = styled.View`
   padding-vertical: 8px;
+  width: 350px;
 `;
 
 export const DexEntryGameContainer = styled.View`
@@ -34,4 +24,8 @@ export const DexEntryText = styled.Text`
   text-align: justify;
 `;
 
-export const Container = styled.ScrollView``;
+export const Container = styled.ScrollView.attrs({
+  contentContainerStyle: {
+    alignItems: 'center',
+  },
+})``;

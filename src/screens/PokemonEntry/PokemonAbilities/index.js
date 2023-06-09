@@ -24,8 +24,9 @@ function PokemonDetail({ route }) {
             const englishEntry = response.data.effect_entries.find(
               (entry) => entry.language.name === 'en'
             ); 
+
             const hiddenAbility = response.data.pokemon.find((pokemon) => pokemon.pokemon.name === pokemonData.name && pokemon.is_hidden);
-            return { name: ability.ability.name, effect: englishEntry.effect, hiddenAbility };
+            return { name: ability.ability.name, effect: englishEntry ? englishEntry.effect : 'Unknown, there is no data available' , hiddenAbility };
           
           })
         );
@@ -47,7 +48,7 @@ function PokemonDetail({ route }) {
             <AbilityTitle>{formatName(ability.name)} {ability.hiddenAbility && "(Hidden)"}</AbilityTitle>
           </AbilityTitleContainer>
           <AbilityTextContainer>
-            <AbilityText>{ability.effect}</AbilityText>
+          <AbilityText>{ability.effect}</AbilityText>
           </AbilityTextContainer>
         </AbilityWrapper>
       ))}

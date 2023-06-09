@@ -8,12 +8,11 @@ import  Header  from '../../Header';
 const Tab = createMaterialTopTabNavigator();
 
 function PokemonNavigation({ route }) {
-  const { params } = route;
 
   return (
     <>
     <Header route={route}/>
-      <Tab.Navigator>
+      <Tab.Navigator >
         <Tab.Screen name="Entries">
           {() => <PokedexEntry route={route} />}
         </Tab.Screen>
