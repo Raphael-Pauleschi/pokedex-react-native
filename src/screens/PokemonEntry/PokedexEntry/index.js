@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import formatName from '../../services/FormatName';
-import StatsDisplay from '../../components/StatsDisplay';
+import formatName from '../../../services/FormatName';
+import StatsDisplay from '../../../components/StatsDisplay';
 import {
   PokemonImage,
   PokemonName,
@@ -12,12 +12,11 @@ import {
   DexEntryGameContainer,
   DexEntryTextContainer,
 } from './style';
-import TypeIcon from '../../components/TypeIcon';
+import TypeIcon from '../../../components/TypeIcon';
 
 function PokemonDetail({ route }) {
   const pokemonData = route.params;
   const [pokemonEntries, setPokemonEntries] = useState([]);
-
   useEffect(() => {
     const fetchPokemonEntries = async () => {
       try {
@@ -38,12 +37,6 @@ function PokemonDetail({ route }) {
 
   return (
     <Container>
-      <PokemonImage source={{ uri: pokemonData.sprites.front_default }} />
-      <PokemonName>{formatName(pokemonData.species.name)}</PokemonName>
-      <TypeIcon types={pokemonData.types} />
-      {pokemonData.stats.map((pokemonStats, index) => (
-        <StatsDisplay key={index} label={formatName(pokemonStats.stat.name)} value={pokemonStats.base_stat} />
-      ))}
   
       {pokemonEntries.length == 0 && (
         <>
@@ -80,6 +73,8 @@ function PokemonDetail({ route }) {
           </DexEntryTextContainer>
         </DexEntryWrapper>
       ))}
+
+
     </Container>
   );
 }

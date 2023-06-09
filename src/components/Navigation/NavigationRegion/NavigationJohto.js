@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { createNativeStackNavigator } from '@react-navigation/native-stack'
 import { Page1, Page2, Page3, Page4 } from '../../../screens/pokedexes/JohtoDex/Pages'
-import PokedexEntry from '../../../screens/PokedexEntry'
+import PokedexEntry from '../NavigationPokemon/NavigationPokemon'
 import StepStack from '../StepStack'
 
 const Stack = createNativeStackNavigator();

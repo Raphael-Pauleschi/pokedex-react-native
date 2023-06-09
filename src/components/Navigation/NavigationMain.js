@@ -15,7 +15,7 @@ const Drawer = createDrawerNavigator();
 
 function Navigation() {
   return (
-    <Drawer.Navigator useLegacyImplementation initialRouteName="Unova">
+    <Drawer.Navigator useLegacyImplementation initialRouteName="Kalos">
       <Drawer.Screen name="Kanto" component={KantoDex} />
       <Drawer.Screen name="Johto" component={JohtoDex} />
       <Drawer.Screen name="Hoeen" component={HoeenDex} />
