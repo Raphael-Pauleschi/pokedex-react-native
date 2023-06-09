@@ -2,12 +2,12 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import formatName from '../../../services/FormatName';
 import {
-  DexEntryWrapper,
-  DexEntryGame,
-  DexEntryText,
+  AbilityWrapper,
+  AbilityTitle,
+  AbilityText,
   Container,
-  DexEntryGameContainer,
-  DexEntryTextContainer,
+  AbilityTitleContainer,
+  AbilityTextContainer,
 } from './style';
 
 
@@ -23,8 +23,10 @@ function PokemonDetail({ route }) {
             const response = await axios.get(ability.ability.url);
             const englishEntry = response.data.effect_entries.find(
               (entry) => entry.language.name === 'en'
-            );
-            return { name: ability.ability.name, effect: englishEntry.effect };
+            ); 
+            const hiddenAbility = response.data.pokemon.find((pokemon) => pokemon.pokemon.name === pokemonData.name && pokemon.is_hidden);
+            return { name: ability.ability.name, effect: englishEntry.effect, hiddenAbility };
+          
           })
         );
 
@@ -40,14 +42,14 @@ function PokemonDetail({ route }) {
   return (
     <Container>
       {pokemonAbilities.map((ability, index) => (
-        <DexEntryWrapper key={index}>
-          <DexEntryGameContainer>
-            <DexEntryGame>{formatName(ability.name)}</DexEntryGame>
-          </DexEntryGameContainer>
-          <DexEntryTextContainer>
-            <DexEntryText>{ability.effect}</DexEntryText>
-          </DexEntryTextContainer>
-        </DexEntryWrapper>
+        <AbilityWrapper key={index}>
+          <AbilityTitleContainer>
+            <AbilityTitle>{formatName(ability.name)} {ability.hiddenAbility && "(Hidden)"}</AbilityTitle>
+          </AbilityTitleContainer>
+          <AbilityTextContainer>
+            <AbilityText>{ability.effect}</AbilityText>
+          </AbilityTextContainer>
+        </AbilityWrapper>
       ))}
     </Container>
   );
