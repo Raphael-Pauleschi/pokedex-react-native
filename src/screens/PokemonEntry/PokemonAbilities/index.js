@@ -1,10 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import formatName from '../../../services/FormatName';
-import StatsDisplay from '../../../components/StatsDisplay';
 import {
-  PokemonImage,
-  PokemonName,
   DexEntryWrapper,
   DexEntryGame,
   DexEntryText,
@@ -12,39 +9,43 @@ import {
   DexEntryGameContainer,
   DexEntryTextContainer,
 } from './style';
-import TypeIcon from '../../../components/TypeIcon';
+
 
 function PokemonDetail({ route }) {
   const pokemonData = route.params;
-  const [pokemonEntries, setPokemonEntries] = useState([]);
+  const [pokemonAbilities, setPokemonAbilities] = useState([]);
+
   useEffect(() => {
-    const fetchPokemonEntries = async () => {
+    const fetchPokemonAbilities = async () => {
       try {
-        const response = await axios.get(pokemonData.species.url);
-        const data = response.data;
-        const englishEntries = data.flavor_text_entries.filter(
-          (entry) => entry.language.name === 'en'
+        const abilityDetails = await Promise.all(
+          pokemonData.abilities.map(async (ability) => {
+            const response = await axios.get(ability.ability.url);
+            const englishEntry = response.data.effect_entries.find(
+              (entry) => entry.language.name === 'en'
+            );
+            return { name: ability.ability.name, effect: englishEntry.effect };
+          })
         );
 
-        setPokemonEntries(englishEntries);
+        setPokemonAbilities(abilityDetails);
       } catch (error) {
-        console.error(error);
+        console.error('Error fetching Pokemon abilities:', error);
       }
     };
 
-    fetchPokemonEntries();
+    fetchPokemonAbilities();
   }, [pokemonData]);
 
   return (
     <Container>
-
-{pokemonData.abilities.map((textEntry, index) => (
+      {pokemonAbilities.map((ability, index) => (
         <DexEntryWrapper key={index}>
           <DexEntryGameContainer>
-            <DexEntryGame>{formatName(textEntry.ability.name)}</DexEntryGame>
+            <DexEntryGame>{formatName(ability.name)}</DexEntryGame>
           </DexEntryGameContainer>
           <DexEntryTextContainer>
-            <DexEntryText>Sou um teste eu faço coisas</DexEntryText>
+            <DexEntryText>{ability.effect}</DexEntryText>
           </DexEntryTextContainer>
         </DexEntryWrapper>
       ))}
