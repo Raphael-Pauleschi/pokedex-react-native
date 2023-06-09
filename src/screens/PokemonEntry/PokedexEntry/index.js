@@ -1,10 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import formatName from '../../../services/FormatName';
-import StatsDisplay from '../../../components/StatsDisplay';
 import {
-  PokemonImage,
-  PokemonName,
   DexEntryWrapper,
   DexEntryGame,
   DexEntryText,
@@ -12,7 +9,7 @@ import {
   DexEntryGameContainer,
   DexEntryTextContainer,
 } from './style';
-import TypeIcon from '../../../components/TypeIcon';
+
 
 function PokemonDetail({ route }) {
   const pokemonData = route.params;

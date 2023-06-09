@@ -12,7 +12,7 @@ function PokemonNavigation({ route }) {
   return (
     <>
     <Header route={route}/>
-      <Tab.Navigator >
+      <Tab.Navigator initialRouteName='Stats'>
         <Tab.Screen name="Entries">
           {() => <PokedexEntry route={route} />}
         </Tab.Screen>

@@ -13,7 +13,7 @@ function PokemonDetail({ route }) {
   return (
     <Container>
       <PokemonImage source={{ uri: pokemonData.sprites.front_default }} />
-      <PokemonName>{formatName(pokemonData.species.name)}</PokemonName>
+      <PokemonName>{formatName(pokemonData.name)}</PokemonName>
       <TypeIcon types={pokemonData.types} />
     </Container>
   );
