@@ -1,9 +1,8 @@
-import React, { useState, useEffect } from 'react';
-import {Text} from 'react-native'
+import * as React from 'react';
 import PokemonFlatList from '../../../components/PokemonFlatList'
 
 
-function PokemonDetail({ route }) {
+function PokemonForms({ route }) {
   const pokemonForms = route.params.forms;
 
   return (
@@ -11,4 +10,4 @@ function PokemonDetail({ route }) {
   );
 }
 
-export default PokemonDetail;
+export default PokemonForms;

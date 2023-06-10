@@ -1,6 +1,6 @@
 import * as React from 'react'
 import { Container, TypeWrapper, TypeName } from './style'
-import formatName from '../../services/FormatName';
+import formatName from '../../services/textFormat/FormatName';
 
 function TypeIcon({ types }) {
     return (

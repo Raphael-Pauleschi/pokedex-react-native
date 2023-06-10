@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import formatName from '../../services/FormatName';
+import formatName from '../../services/textFormat/FormatName';
 import {
   PokemonImage,
   PokemonName,

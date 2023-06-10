@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react';
-import formatName from '../../../services/FormatName';
+import formatName from '../../../services/textFormat/FormatName';
 import StatsDisplay from '../../../components/StatsDisplay';
 import Axios from 'axios';
 import PokemonFlatList from '../../../components/PokemonFlatList'
 
-function PokemonDetail({ route }) {
+function PokemonStats({ route }) {
   const pokemonData = route.params;
   const [pokemonVariations, setPokemonVariations] = useState([]);
 
@@ -39,4 +39,4 @@ function PokemonDetail({ route }) {
   );
 }
 
-export default PokemonDetail;
+export default PokemonStats;
