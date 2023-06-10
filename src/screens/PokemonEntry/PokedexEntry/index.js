@@ -29,9 +29,7 @@ function PokemonDetail({ route }) {
           (entry) => entry.language.name === 'en'
         );
 
-        setPokemonEntries(
-          englishEntries
-        );
+        setPokemonEntries(englishEntries);
       } catch (error) {
         console.error(error);
       }
