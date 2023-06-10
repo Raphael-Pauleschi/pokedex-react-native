@@ -1,7 +1,6 @@
 import * as React from 'react';
 import { createDrawerNavigator } from '@react-navigation/drawer';
-import pokedex from './pokedex';
-import PokedexList from '../../screens/PokedexPage';
+import pokedex from '../../services/PokedexInfoPage';
 import NavigationRegion from './NavigationRegion/NavigationRegion';
 
 
