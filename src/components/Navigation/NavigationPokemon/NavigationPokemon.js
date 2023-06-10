@@ -3,6 +3,7 @@ import { createMaterialTopTabNavigator } from "@react-navigation/material-top-ta
 import  PokemonAbilities  from '../../../screens/PokemonEntry/PokemonAbilities';
 import  PokemonStats  from '../../../screens/PokemonEntry/PokemonStats';
 import  PokedexEntry  from '../../../screens/PokemonEntry/PokedexEntry';
+import PokemonForms from '../../../screens/PokemonEntry/PokemonForms'
 import  Header  from '../../Header';
 
 const Tab = createMaterialTopTabNavigator();
@@ -21,6 +22,9 @@ function PokemonNavigation({ route }) {
         </Tab.Screen>
         <Tab.Screen name="Abilities">
           {() => <PokemonAbilities route={route} />}
+        </Tab.Screen>
+        <Tab.Screen name="Forms">
+          {() => <PokemonForms route={route} />}
         </Tab.Screen>
       </Tab.Navigator>
     </>

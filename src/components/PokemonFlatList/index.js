@@ -4,11 +4,11 @@ import PokemonIcon from '../PokemonIcon';
 
 import { RenderRowSeparator, RenderSeparator, PokemonContainer } from './style';
 
-function PokemonFlatList({ pokemonList }) {
+function PokemonFlatList({ pokemonList, notALink }) {
  
   const renderPokemonIcon = ({ item }) => (
     <PokemonContainer>
-      <PokemonIcon key={item.name} url={item.url} />
+      <PokemonIcon key={item.name} url={item.url} notALink={notALink}/>
     </PokemonContainer>
   );
 

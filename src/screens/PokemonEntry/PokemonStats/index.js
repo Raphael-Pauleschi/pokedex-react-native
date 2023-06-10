@@ -2,8 +2,9 @@ import React, { useState, useEffect } from 'react';
 import formatName from '../../../services/FormatName';
 import StatsDisplay from '../../../components/StatsDisplay';
 import Axios from 'axios';
-import  PokemonIcon  from '../../../components/PokemonIcon'
-import { Image } from 'react-native'
+import PokemonIcon from '../../../components/PokemonIcon'
+import { Text } from 'react-native'
+import PokemonFlatList from '../../../components/PokemonFlatList'
 
 import {
   Container,
@@ -11,33 +12,39 @@ import {
 
 function PokemonDetail({ route }) {
   const pokemonData = route.params;
+  const [pokemonVariations, setPokemonVariations] = useState([]);
   const [pokemonForms, setPokemonForms] = useState([]);
 
   useEffect(() => {
-    const fetchPokemonForms = async () => {
+    const fetchPokemonVariations = async () => {
       try {
-        const response = await Axios.get(pokemonData.species.url);
-        const data = response.data.varieties;
-        setPokemonForms(data)
+        const responseVariations = await Axios.get(pokemonData.species.url);
+        const dataVariations = responseVariations.data.varieties.map(variation => variation.pokemon);
 
+        setPokemonForms(pokemonData.forms);
+        setPokemonVariations(dataVariations);
       } catch (error) {
         console.error(error)
       }
     }
-    fetchPokemonForms()
+    fetchPokemonVariations()
+    console.log(pokemonVariations)
   }, [pokemonData])
 
 
   return (
-    <Container>
+    <>
       {pokemonData.stats.map((pokemonStats, index) => (
-        <StatsDisplay key={index} label={formatName(pokemonStats.stat.name)} value={pokemonStats.base_stat} />
+        <StatsDisplay key={index}
+          label={formatName(pokemonStats.stat.name)}
+          value={pokemonStats.base_stat} />
       ))}
 
-    {pokemonForms.map((form, index) => (
-        <PokemonIcon key={index} url={form.pokemon.url} />
-      ))}
-    </Container>
+      {pokemonVariations.length > 1 && (
+        <PokemonFlatList pokemonList={pokemonVariations} />
+      )}
+
+    </>
   );
 }
 

@@ -10,7 +10,7 @@ import {
   PokeballImage,
 } from './style';
 
-function PokemonIcon({ url }) {
+function PokemonIcon({ url, notALink }) {
   const [loading, setLoading] = useState(true);
   const [pokemonUrl, setPokemonUrl] = useState('');
   const [pokemonData, setPokemonData] = useState('')
@@ -44,6 +44,20 @@ function PokemonIcon({ url }) {
     return null; // Render nothing if the URI is empty
   }
 
+  if(notALink){
+    return (
+        <PokeballContainer>
+          {loading && <ActivityIndicator />}
+          <PokeballUp />
+          <PokeballStrip />
+          <PokeballDown />
+          <PokeballImage source={{ uri: pokemonUrl }}
+            onLoad={handleImageLoad}
+            resizeMode="contain" />
+        </PokeballContainer>
+    );
+  }
+  else{
   return (
     <TouchableOpacity onPress={handlePress}>
 
@@ -58,6 +72,7 @@ function PokemonIcon({ url }) {
       </PokeballContainer>
     </TouchableOpacity>
   );
+  }
 }
 
 export default PokemonIcon;
