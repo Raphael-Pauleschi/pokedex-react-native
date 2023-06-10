@@ -28,7 +28,6 @@ function PokemonDetail({ route }) {
       }
     }
     fetchPokemonVariations()
-    console.log(pokemonVariations)
   }, [pokemonData])
 
 
