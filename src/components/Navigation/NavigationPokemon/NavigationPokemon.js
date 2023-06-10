@@ -23,9 +23,11 @@ function PokemonNavigation({ route }) {
         <Tab.Screen name="Abilities">
           {() => <PokemonAbilities route={route} />}
         </Tab.Screen>
+        {route.params.forms.length >1 ?
         <Tab.Screen name="Forms">
-          {() => <PokemonForms route={route} />}
+          {() => <PokemonForms route={route} /> }
         </Tab.Screen>
+        : null}
       </Tab.Navigator>
     </>
   );
