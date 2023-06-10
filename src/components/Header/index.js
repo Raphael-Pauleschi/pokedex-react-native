@@ -4,6 +4,7 @@ import {
   PokemonImage,
   PokemonName,
   Container,
+  ImageWrapper
 } from './style';
 import TypeIcon from '../../components/TypeIcon';
 
@@ -12,7 +13,11 @@ function PokemonDetail({ route }) {
 
   return (
     <Container>
+      <ImageWrapper>
       <PokemonImage source={{ uri: pokemonData.sprites.front_default }} />
+      { pokemonData.sprites.front_shiny &&
+        <PokemonImage source={{ uri: pokemonData.sprites.front_shiny }} />}
+     </ImageWrapper>
       <PokemonName>{formatName(pokemonData.name)}</PokemonName>
       <TypeIcon types={pokemonData.types} />
     </Container>
